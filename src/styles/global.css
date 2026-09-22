@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sereniti-navy: #1E2B4D;
+  --color-sereniti-navy-dark: #121A2F;
+  --color-sereniti-sage: #437854;
+  --color-sereniti-sage-dark: #346142;
+  --color-sereniti-peach: #E8A26A;
+  --color-sereniti-bg: #FAFBFD;
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}

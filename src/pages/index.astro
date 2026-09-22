@@ -1,0 +1,536 @@
+---
+import '../styles/global.css';
+
+const formspreeEndpoint = "https://formspree.io/f/YOUR_FORMSPREE_ID";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Serenitii Independent Living",
+  "image": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=1200&auto=format&fit=crop",
+  "telephone": "(317) 796-1078",
+  "email": "serenitiilovinghomecare@yahoo.com",
+  "priceRange": "$750 - $950",
+  "description": "Safe, structured, drug- and alcohol-free all-inclusive residential independent living in Indianapolis and Evansville, Indiana.",
+  "areaServed": [
+    { "@type": "City", "name": "Indianapolis" },
+    { "@type": "City", "name": "Evansville" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "IN",
+    "addressCountry": "US"
+  }
+};
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Serenitii Independent Living provides safe, structured, all-inclusive housing across Evansville and Indianapolis." />
+    <title>Serenitii Independent Living | Experience Joy in Independent Living</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-[#FDFBF7] text-slate-800 font-sans antialiased selection:bg-[#437854] selection:text-white pb-16 md:pb-0">
+
+    <!-- Top Contact Strip -->
+    <header class="bg-[#15233E] text-slate-300 text-xs sm:text-sm py-2.5 px-4 sm:px-8 border-b border-white/10">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div class="flex items-center gap-2 font-medium tracking-wide">
+          <span class="inline-block w-2 h-2 rounded-full bg-[#527D48] animate-pulse"></span>
+          Serving Evansville &amp; Indianapolis, Indiana
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="tel:3177961078" class="hover:text-white transition flex items-center gap-1.5 font-semibold text-slate-200">
+            <svg class="w-4 h-4 text-[#7A9A60]" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/></svg>
+            (317) 796-1078
+          </a>
+          <a href="mailto:serenitiilovinghomecare@yahoo.com" class="hidden md:flex hover:text-white transition items-center gap-1.5 text-slate-200">
+            <svg class="w-4 h-4 text-[#7A9A60]" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            serenitiilovinghomecare@yahoo.com
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-[#1E2B4D] text-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
+        
+        <!-- Transparent Logo Anchor -->
+        <a href="#" class="flex items-center group py-1">
+          <img 
+            src="/logo.png" 
+            alt="Serenitii Independent Living" 
+            class="h-10 sm:h-12 w-auto object-contain transition group-hover:opacity-95" 
+          />
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <div class="hidden md:flex items-center gap-8 text-xs tracking-wider uppercase font-semibold text-slate-200">
+          <a href="#about" class="hover:text-white transition">About Us</a>
+          <a href="#homes" class="hover:text-white transition">Our Homes</a>
+          <a href="#services" class="hover:text-white transition">Services</a>
+          <a href="#admissions" class="hover:text-white transition">Admissions</a>
+          <a href="#contact" class="bg-[#5C7953] hover:bg-[#4E6746] text-white px-5 py-2.5 rounded text-xs tracking-wider uppercase font-bold transition shadow-sm">
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-[#15233E] border-t border-white/10 px-6 py-4 space-y-3 text-sm font-semibold tracking-wide">
+        <a href="#about" class="block text-slate-300 hover:text-white py-1">About Us</a>
+        <a href="#homes" class="block text-slate-300 hover:text-white py-1">Our Homes</a>
+        <a href="#services" class="block text-slate-300 hover:text-white py-1">Services</a>
+        <a href="#admissions" class="block text-slate-300 hover:text-white py-1">Admissions</a>
+        <a href="#contact" class="block w-full text-center bg-[#5C7953] text-white py-2.5 rounded font-bold uppercase tracking-wider text-xs">Contact Intake</a>
+      </div>
+    </nav>
+
+    <!-- Fullscreen Hero Banner -->
+    <section class="relative min-h-[620px] lg:min-h-[740px] flex items-center justify-center overflow-hidden">
+      <img 
+        src="/hero-senior.jpg" 
+        alt="Senior resident enjoying coffee gazing out window" 
+        class="absolute inset-0 w-full h-full object-cover object-center" 
+      />
+      
+      <div class="absolute inset-0 bg-[#0c1626]/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0A111E]/85 via-transparent to-black/30"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white space-y-6 pt-12 pb-16">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-normal font-['Cormorant_Garamond',serif] leading-tight tracking-tight drop-shadow-md">
+          Experience Joy in <br />
+          Independent Living
+        </h1>
+
+        <div>
+          <a href="#homes" class="inline-flex flex-col items-center gap-3 group">
+            <span class="bg-[#5C7953] hover:bg-[#4D6746] text-white px-8 py-3.5 rounded text-xs sm:text-sm tracking-widest uppercase font-bold shadow-lg transition">
+              Explore Our Living Options
+            </span>
+            <svg class="w-6 h-6 text-white/90 group-hover:translate-y-1 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Strip & Quick Intake Qualifications -->
+    <section id="about" class="py-14 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#527D48]/10 text-[#527D48] font-bold text-xs tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-[#527D48]"></span>
+            Evansville &amp; Indianapolis Openings
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1E2B4D] tracking-tight">
+            Comfort. Community. Independence.
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Serenitii Independent Living provides safe, structured, drug- and alcohol-free residential homes designed for personal dignity, routine, and stability. Our all-inclusive living model takes financial ambiguity out of the picture with utilities, Wi-Fi, and laundry ready from day one.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-[#FAFBFD] p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+          <div class="flex justify-between items-baseline border-b border-slate-200 pb-3">
+            <div>
+              <span class="text-xs uppercase font-bold text-slate-500 tracking-wider">All-Inclusive Living</span>
+              <p class="text-2xl sm:text-3xl font-black text-[#1E2B4D]">$750 – $950 <span class="text-xs font-normal text-slate-500">/ mo</span></p>
+            </div>
+            <span class="text-[11px] font-semibold text-[#527D48] bg-[#527D48]/10 px-2.5 py-1 rounded-full">
+              Zero Utility Add-ons
+            </span>
+          </div>
+
+          <div class="space-y-1.5 text-xs text-slate-600">
+            <p class="font-bold text-[#1E2B4D] uppercase tracking-wider text-[10px]">Resident Placement Requirements:</p>
+            <div class="flex items-center gap-2">
+              <span class="text-[#527D48] font-bold">✓</span>
+              <span>Valid State or Federal Photo Identification</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#527D48] font-bold">✓</span>
+              <span>Documented proof of income, SSI/SSDI, VA benefits, or agency funding</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#527D48] font-bold">✓</span>
+              <span>Commitment to a 100% drug &amp; alcohol-free sober living agreement</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Our Homes Showcase Section -->
+    <section id="homes" class="py-20 bg-[#F8F9FA] border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+          <span class="text-[#527D48] font-bold text-xs uppercase tracking-widest">Thoughtful Living Spaces</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1E2B4D]">Our Housing Accommodations</h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Clean, completely furnished residential homes equipped with everything needed for independent daily living.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <!-- Private Room Card -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
+            <div class="relative h-56">
+              <img 
+                src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=800&auto=format&fit=crop" 
+                alt="Fully furnished private bedroom suite" 
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-3 right-3 bg-[#1E2B4D] text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                $950 / mo
+              </span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-lg font-bold text-[#1E2B4D]">Private Bedroom Suite</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Dedicated personal bedroom space furnished with bed, mattress, fresh linens, dresser, and private closet storage.
+              </p>
+              <ul class="text-xs text-slate-500 space-y-1 pt-2 border-t border-slate-100">
+                <li>• Individual lock &amp; key privacy</li>
+                <li>• High-speed Wi-Fi access included</li>
+                <li>• Full utility package covered</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Shared Room Card -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
+            <div class="relative h-56">
+              <img 
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop" 
+                alt="Affordable furnished shared bedroom setup" 
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-3 right-3 bg-[#527D48] text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                $750 / mo
+              </span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-lg font-bold text-[#1E2B4D]">Shared Living Room</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Budget-conscious shared room setup paired with respectful community members. Perfect for rebuilding independence.
+              </p>
+              <ul class="text-xs text-slate-500 space-y-1 pt-2 border-t border-slate-100">
+                <li>• Dedicated bed &amp; personal storage</li>
+                <li>• Structured peer support structure</li>
+                <li>• Transparent flat monthly pricing</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Common Areas Card -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
+            <div class="relative h-56">
+              <img 
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" 
+                alt="Furnished kitchen and living room common areas" 
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-3 right-3 bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                All Homes
+              </span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-lg font-bold text-[#1E2B4D]">Shared Community Spaces</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Fully functional kitchens, comfortable living rooms, on-site washer &amp; dryers, and calm dining spaces.
+              </p>
+              <ul class="text-xs text-slate-500 space-y-1 pt-2 border-t border-slate-100">
+                <li>• On-site laundry facilities</li>
+                <li>• Refrigerator, stove, and microwave</li>
+                <li>• Clean, quiet common living area</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services & Demographics Breakdown -->
+    <section id="services" class="py-20 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid lg:grid-cols-2 gap-10">
+          
+          <!-- Column 1: What We Offer -->
+          <div class="p-8 rounded-2xl bg-[#FAFBFD] border border-slate-200 shadow-sm space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-[#1E2B4D] text-white flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              </div>
+              <h2 class="text-2xl font-bold text-[#1E2B4D]">What We Offer</h2>
+            </div>
+            
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#527D48]/15 text-[#527D48] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+                <div>
+                  <strong class="text-[#1E2B4D] block font-semibold text-sm">Fully Furnished Rooms</strong>
+                  <span class="text-xs text-slate-600">Both shared living and private room setups available immediately.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#527D48]/15 text-[#527D48] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+                <div>
+                  <strong class="text-[#1E2B4D] block font-semibold text-sm">Affordable All-Inclusive Housing</strong>
+                  <span class="text-xs text-slate-600">Single monthly rate covers rent, power, gas, trash, and sewer.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#527D48]/15 text-[#527D48] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+                <div>
+                  <strong class="text-[#1E2B4D] block font-semibold text-sm">All Utilities &amp; Wi-Fi Included</strong>
+                  <span class="text-xs text-slate-600">Continuous high-speed wireless internet and comfortable climate control.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#527D48]/15 text-[#527D48] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+                <div>
+                  <strong class="text-[#1E2B4D] block font-semibold text-sm">On-Site Laundry Facilities</strong>
+                  <span class="text-xs text-slate-600">Free, accessible washer and dryer setups right in the home.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#527D48]/15 text-[#527D48] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+                <div>
+                  <strong class="text-[#1E2B4D] block font-semibold text-sm">Safe &amp; Structured Environment</strong>
+                  <span class="text-xs text-slate-600">Enforced drug and alcohol free property standards.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Who We Serve -->
+          <div class="p-8 rounded-2xl bg-[#1E2B4D] text-white space-y-6 flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-[#5C7953] text-white flex items-center justify-center">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <h2 class="text-2xl font-bold">Who We Serve</h2>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-3">
+                {[
+                  "Veterans",
+                  "Seniors 55+",
+                  "Adults with Disabilities",
+                  "DV Survivors",
+                  "Individuals in Recovery",
+                  "Re-Entry"
+                ].map((item) => (
+                  <div class="bg-white/10 p-4 rounded-xl border border-white/5">
+                    <span class="text-[10px] uppercase font-bold text-[#E8A26A] tracking-wider block">Demographic Track</span>
+                    <p class="font-bold text-sm sm:text-base text-white mt-0.5">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 text-xs text-slate-300">
+              * Active proof of funding (SSI, SSDI, pension, employment, or sponsor voucher) required prior to move-in verification.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Admissions & Intake Portal -->
+    <section id="admissions" class="py-20 bg-[#F8F9FA]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-8">
+        
+        <div class="text-center space-y-3 mb-12">
+          <span class="text-[#527D48] font-bold text-xs uppercase tracking-widest">Admissions &amp; Referral Intake</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1E2B4D]">Housing Placement Application</h2>
+          <p class="text-slate-600 text-sm sm:text-base max-w-lg mx-auto">
+            Directly for prospective residents and referring caseworkers, discharge coordinators, or agency advocates.
+          </p>
+        </div>
+
+        <div id="contact" class="bg-white p-8 sm:p-10 rounded-2xl shadow-xl border border-slate-200">
+          <form action={formspreeEndpoint} method="POST" class="space-y-6">
+            
+            <!-- Applicant / Case Manager Segment Switcher -->
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">Application Type</label>
+              <div class="flex flex-wrap gap-4 text-xs font-semibold">
+                <label class="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="applicant_role" value="self" checked class="text-[#527D48] focus:ring-[#527D48]" id="role-self" />
+                  <span>I am applying for myself</span>
+                </label>
+                <label class="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="applicant_role" value="caseworker" class="text-[#527D48] focus:ring-[#527D48]" id="role-caseworker" />
+                  <span>I am a Case Manager / Advocate referring a client</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Case Worker Extra Details (Toggleable) -->
+            <div id="caseworker-fields" class="hidden grid sm:grid-cols-2 gap-6 p-4 bg-[#1E2B4D]/5 rounded-xl border border-[#1E2B4D]/10">
+              <div>
+                <label for="agency_name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Agency / Hospital / Organization</label>
+                <input type="text" id="agency_name" name="agency_name" placeholder="e.g., Eskenazi, VA, Horizon House" 
+                  class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white" />
+              </div>
+              <div>
+                <label for="worker_name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Case Manager Name &amp; Contact</label>
+                <input type="text" id="worker_name" name="worker_name" placeholder="Name & Direct Phone" 
+                  class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Resident / Applicant Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Doe" 
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white transition" />
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Resident / Contact Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(317) 000-0000" 
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white transition" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="contact@example.com" 
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white transition" />
+              </div>
+              <div>
+                <label for="location" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Desired Placement City</label>
+                <select id="location" name="location" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white transition">
+                  <option value="Indianapolis">Indianapolis, IN</option>
+                  <option value="Evansville">Evansville, IN</option>
+                  <option value="Either">Either Location Open</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="demographic" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Placement Track</label>
+                <select id="demographic" name="demographic" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white transition">
+                  <option value="Veteran">Veteran</option>
+                  <option value="Senior 55+">Senior 55+</option>
+                  <option value="Adults with Disabilities">Adults with Disabilities</option>
+                  <option value="DV Survivor">DV Survivor</option>
+                  <option value="Individual in Recovery">Individual in Recovery</option>
+                  <option value="Re-Entry">Re-Entry</option>
+                  <option value="General Supportive Housing">General Supportive Placement</option>
+                </select>
+              </div>
+              <div>
+                <label for="room_type" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Preferred Room Type</label>
+                <select id="room_type" name="room_type" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white transition">
+                  <option value="Private ($950)">Private Room ($950 / mo)</option>
+                  <option value="Shared ($750)">Shared Living Room ($750 / mo)</option>
+                  <option value="First Available">First Available Room</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="notes" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Move-in Timeline &amp; Referral Details</label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Anticipated move-in date, funding verification (SSI, voucher, self-pay), accessibility requirements..." 
+                class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#527D48] bg-white transition"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-[#1E2B4D] hover:bg-[#15233E] text-white font-bold rounded-lg shadow-md hover:shadow-lg transition text-sm uppercase tracking-wider">
+              Submit Housing Application
+            </button>
+            <p class="text-[11px] text-center text-slate-400">Applications are encrypted and routed directly to Serenitii placement coordinators.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#10192A] text-slate-400 py-12 px-4 sm:px-8 border-t border-slate-800 text-sm">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div>
+          <img src="/logo.png" alt="Serenitii Independent Living" class="h-9 w-auto mx-auto md:mx-0 mb-2 brightness-200 contrast-125" />
+          <p class="text-xs text-slate-400">Affordable, drug- and alcohol-free structured living across Indiana.</p>
+        </div>
+        <div class="space-y-1">
+          <p class="text-slate-300">Direct Intake Line: <a href="tel:3177961078" class="text-white font-semibold underline underline-offset-4">(317) 796-1078</a></p>
+          <p class="text-xs text-slate-400">serenitiilovinghomecare@yahoo.com</p>
+        </div>
+        <div class="text-xs text-slate-500">
+          &copy; {new Date().getFullYear()} Serenitii Independent Living. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Sticky Call-To-Action Bar -->
+    <div class="fixed bottom-0 inset-x-0 bg-[#1E2B4D] text-white border-t border-slate-700/60 p-3 flex items-center justify-between md:hidden z-50 shadow-2xl">
+      <div>
+        <p class="text-[10px] text-slate-300 font-medium">Have Questions? Call Direct</p>
+        <p class="text-xs font-bold text-white">(317) 796-1078</p>
+      </div>
+      <a href="tel:3177961078" class="bg-[#5C7953] hover:bg-[#4E6746] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded shadow flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/></svg>
+        Call Intake
+      </a>
+    </div>
+
+    <!-- Interactive Script for Mobile Nav & Referral Toggle -->
+    <script>
+      // Mobile Drawer Toggle
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+
+      // Agency / Caseworker Form Fields Toggle
+      const roleSelf = document.getElementById('role-self') as HTMLInputElement;
+      const roleCaseworker = document.getElementById('role-caseworker') as HTMLInputElement;
+      const caseworkerFields = document.getElementById('caseworker-fields');
+
+      function updateRoleFields() {
+        if (roleCaseworker?.checked) {
+          caseworkerFields?.classList.remove('hidden');
+        } else {
+          caseworkerFields?.classList.add('hidden');
+        }
+      }
+
+      roleSelf?.addEventListener('change', updateRoleFields);
+      roleCaseworker?.addEventListener('change', updateRoleFields);
+    </script>
+
+  </body>
+</html>
